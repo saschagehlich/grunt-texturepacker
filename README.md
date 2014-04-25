@@ -63,7 +63,7 @@ Type: `String`
 
 The destination filename for the data file.
 
-### options.output.sheet.format
+### options.output.data.format
 Type: `String`
 
 The format for the data file. See `TexturePacker --help` for available formats.
