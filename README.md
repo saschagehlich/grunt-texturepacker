@@ -37,53 +37,46 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.executable
 Type: `String`
-Default value: `',  '`
+Default: `TexturePacker`
 
-A string value that is used to do something with whatever.
+The path to the TexturePacker executable.
 
-#### options.punctuation
+#### options.src
+Type: `String|Array`
+
+A string or array containing the files that should be used as an input.
+
+### options.output.sheet.file
 Type: `String`
-Default value: `'.'`
 
-A string value that is used to do something else with whatever else.
+The destination filename for the sheet file.
 
-### Usage Examples
+### options.output.sheet.format
+Type: `String`
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+The format for the sheet file. See `TexturePacker --help` for available formats.
 
-```js
-grunt.initConfig({
-  texturepacker: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
+### options.output.data.file
+Type: `String`
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+The destination filename for the data file.
 
-```js
-grunt.initConfig({
-  texturepacker: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
+### options.output.sheet.format
+Type: `String`
+
+The format for the data file. See `TexturePacker --help` for available formats.
+
+### All other TexturePacker CLI options
+
+All other options will be converted to CLI options, e.g. `{ basicSortBy: "Width" }` will be converted to `--basic-sort-by Width`.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+
+#### 0.0.1 (Apr 25 2014)
+
+* Initial release
