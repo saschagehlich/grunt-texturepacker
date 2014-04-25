@@ -30,22 +30,29 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     texturepacker: {
-      default_options: {
+      assets: {
+        src: ["test/fixtures/**/*.png"],
         options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
-      },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!',
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
-      },
+          scale: 2,
+          scaleMode: 'fast',
+          disableRotation: true,
+          padding: 0,
+          trimMode: '',
+          algorithm: 'Basic',
+          basicSortBy: 'Width',
+          basicOrder: 'Ascending',
+          output: {
+            sheet: {
+              file: 'tmp/assets.png',
+              format: 'png'
+            },
+            data: {
+              file: 'tmp/assets.json',
+              format: 'json'
+            }
+          }
+        }
+      }
     },
 
     // Unit tests.
